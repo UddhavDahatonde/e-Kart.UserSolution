@@ -20,12 +20,10 @@ namespace e_Kart
             builder.Services.AddSwaggerGen();
             builder.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy(builder =>
-                {
-                    builder.WithOrigins("http:localhost:4200")
-                    .AllowAnyMethod()
-                    .AllowAnyHeader();
-                });
+                options.AddPolicy("AllowAllOrigins", builder =>
+                builder.WithOrigins("http://localhost:4200")  // Allow Angular app's origin
+                   .AllowAnyHeader()                     // Allow any header
+                   .AllowAnyMethod());
             });
             var app = builder.Build();
             app.UseExceptionHandlingMiddleware();
@@ -33,7 +31,7 @@ namespace e_Kart
             app.UseRouting();
             app.UseSwagger();
             app.UseSwaggerUI();
-            app.UseCors();
+            app.UseCors("AllowAllOrigins");
             app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
