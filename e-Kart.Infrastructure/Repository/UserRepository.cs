@@ -47,7 +47,7 @@ namespace e_Kart.Infrastructure.Repository
             string query = "SELECT * FROM public.\"Users\" WHERE \"Email\" = @Email AND \"Password\" = @Password";
             var parameters = new { Email = email, Password = password };
 
-            return await _dbContext.DbConnection.QuerySingleOrDefaultAsync<ApplicationUser>(query, parameters);
+            return await _dbContext.DbConnection.QueryFirstOrDefaultAsync<ApplicationUser>(query, parameters);
 
         }
     }
