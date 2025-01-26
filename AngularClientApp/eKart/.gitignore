@@ -1,0 +1,53 @@
+# Angular build output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node.js dependencies
+/node_modules
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Angular CLI cache
+/.angular/cache
+.angular/
+.sass-cache/
+testem.log
+
+# Logs
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Coverage reports
+/coverage
+/libpeerconnection.log
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Ignore environment files (Sensitive data should not be committed)
+src/environments/environment*.ts
